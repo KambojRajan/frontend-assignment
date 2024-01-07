@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { PRODUCT_CATEGORIES, OTHER_LINKS } from "../Config";
 import { MenuIcon } from "lucide-react";
+import Link from "next/link";
 
 export function NavButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +45,8 @@ export function NavButton() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               {OTHER_LINKS.map((link, index) => (
-                <DropdownMenuItem key={index} href={link.href}>
-                  {link.label}
+                <DropdownMenuItem key={index} >
+                  <Link href={link.href}> {link.label}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuGroup>
