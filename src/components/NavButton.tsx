@@ -32,8 +32,8 @@ export function NavButton() {
                 <div key={index}>
                   <DropdownMenuLabel>{category.label}</DropdownMenuLabel>
                   {category.featured.map((item, idx) => (
-                    <DropdownMenuItem key={idx} href={item.href}>
-                      {item.name}
+                    <DropdownMenuItem key={idx}>
+                      <Link href={item.href}> {item.name}</Link>
                     </DropdownMenuItem>
                   ))}
                   {index !== PRODUCT_CATEGORIES.length - 1 && (
@@ -45,7 +45,7 @@ export function NavButton() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               {OTHER_LINKS.map((link, index) => (
-                <DropdownMenuItem key={index} >
+                <DropdownMenuItem key={index}>
                   <Link href={link.href}> {link.label}</Link>
                 </DropdownMenuItem>
               ))}
